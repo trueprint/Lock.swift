@@ -228,6 +228,7 @@ class MockWebAuth: WebAuth {
     var params: [String: String] = [:]
     var scope: String? = nil
     var audience: String? = nil
+    var connectionScope: String? = nil
     var result: () -> Auth0.Result<Credentials> = { _ in return Auth0.Result.failure(error: AuthenticationError(string: "FAILED", statusCode: 500)) }
     var telemetry: Telemetry = Telemetry()
 
@@ -241,6 +242,11 @@ class MockWebAuth: WebAuth {
     }
 
     func state(_ state: String) -> Self {
+        return self
+    }
+
+    func connectionScope(_ connectionScope: String) -> Self {
+        self.connectionScope = connectionScope
         return self
     }
 
