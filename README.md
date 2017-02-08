@@ -249,6 +249,16 @@ Scope used for authentication. By default is `openid`. It will return not only t
 }
 ```
 
+#### Passwordless Method
+
+If you are using email passwordless connections, the default method is `.code` which sends the user a one time passcode to login. If you want to use universal links you can use:
+
+```swift
+.withOptions {
+  $0.passwordlessMethod = .magicLink
+}
+```
+
 #### Database
 
 * **allow**: Which database screens will be accessible, the default is enable all screens e.g. `.Login, .Signup, .ResetPassword`
@@ -287,6 +297,16 @@ When signing up the default information requirements are the user's *email* and 
 .withOptions {
   $0.activeDirectoryEmailAsUsername = true
   $0.enterpriseConnectionUsingActiveAuth = ["enterprisedomain.com"]
+}
+```
+
+#### Passwordless
+
+If you are using passwordless connections and have specified the `.magicLink` option to send the user universal links then you will need to add the following to your `AppDelegate.swift`:
+
+```swift
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+  return Lock.continueActivity(userActivity)
 }
 ```
 

@@ -50,7 +50,6 @@ class ViewController: UIViewController {
                     .classic()
                         .withOptions {
                             applyDefaultOptions(&$0)
-                            $0.enterpriseConnectionUsingActiveAuth = ["contoso-ad"]
                         }
                         .withStyle {
                             $0.oauth2["slack"] = AuthStyle(
@@ -179,6 +178,7 @@ class ViewController: UIViewController {
             .onError { Log.error?.message("Failed with \($0)") }
             .onSignUp { email, _ in  Log.debug?.message("New user \(email)") }
             .onCancel { Log.debug?.message("User closed lock") }
+            .onPasswordless { Log.debug?.message("Passwordless \($1) requested for \($0)") }
             .present(from: self)
     }
 }
