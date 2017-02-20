@@ -1,4 +1,4 @@
-github "auth0/Auth0.swift" "faae08e1238fc38e1879d6a0abdb09fb11eee5ac"
+github "auth0/Auth0.swift" "7f55b406e88671c7fb6014b283a672904d6af422"
 github "emaloney/CleanroomASL" "2.1.1"
 github "Quick/Nimble" "v5.1.1"
 github "AliSoftware/OHHTTPStubs" "5.2.2-swift3"
