@@ -251,11 +251,11 @@ Scope used for authentication. By default is `openid`. It will return not only t
 
 #### Connection Scope
 
-Allows you to set provider scopes for oauth2/social connections. By default is empty.
+Allows you to set provider scopes for oauth2/social connections with a comma separated list. By default is empty.
 
 ```swift
 .withOptions {
-  $0.connectionScope = ["facebook": "user_friends email"]
+  $0.connectionScope = ["facebook": "user_friends,email"]
 }
 ```
 

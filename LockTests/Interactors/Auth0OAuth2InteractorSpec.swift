@@ -65,9 +65,9 @@ class Auth0OAuth2InteractorSpec: QuickSpec {
             }
 
             it("should set connection scope") {
-                options.connectionScope = ["facebook": "user_friends email"]
+                options.connectionScope = ["facebook": "user_friends,email"]
                 interactor.login("facebook", callback: { _ in })
-                expect(webAuth.connectionScope) == "user_friends email"
+                expect(webAuth.connectionScope) == "user_friends,email"
             }
 
             it("should not set connection scope if empty") {
