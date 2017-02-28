@@ -29,7 +29,7 @@ struct Auth0OAuth2Interactor: OAuth2Authenticatable {
     let dispatcher: Dispatcher
     let options: Options
 
-    func login(_ connection: String, callback: @escaping (OAuth2AuthenticatableError?) -> ()) {
+    func login(_ connection: String, callback: @escaping (OAuth2AuthenticatableError?) -> Void) {
         var parameters: [String: String] = [:]
         self.options.parameters.forEach { parameters[$0] = "\($1)" }
         var auth = self.webAuth

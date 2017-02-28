@@ -97,7 +97,7 @@ class DatabasePresenter: Presentable, Loggable {
             self.logger.info("Perform login for email: \(self.authenticator.email)")
             button.inProgress = true
 
-            let errorHandler: (LocalizableError?) -> () = { error in
+            let errorHandler: (LocalizableError?) -> Void = { error in
                 Queue.main.async {
                     button.inProgress = false
                     guard let error = error else {
@@ -252,7 +252,7 @@ class DatabasePresenter: Presentable, Loggable {
 
 }
 
-private func safariBuilder(forURL url: URL, navigator: Navigable) -> (UIAlertAction) -> () {
+private func safariBuilder(forURL url: URL, navigator: Navigable) -> (UIAlertAction) -> Void {
     return { _ in
         let safari = SFSafariViewController(url: url)
         navigator.present(safari)
