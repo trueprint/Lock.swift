@@ -62,7 +62,7 @@
 
 - (instancetype)init {
     if (self) {
-        self.title = A0LocalizedString(@"Login");
+        self.title = A0LocalizedString(@"Arivale");
     }
     return self;
 }

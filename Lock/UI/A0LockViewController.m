@@ -360,7 +360,7 @@
       [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"SIGN UP")
                                actionBlock:^{
                                  [[UIApplication sharedApplication]
-                                 openURL:[NSURL URLWithString: @"https://www.arivale.com/learn-via-app"]];
+                                  openURL:[NSURL URLWithString: @"https://www.arivale.com/learn-via-app"]];
       }];
     }
     if (showResetPassword) {
