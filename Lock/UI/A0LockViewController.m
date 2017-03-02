@@ -300,7 +300,10 @@
     BOOL showSignUp = ![self.configuration shouldDisableSignUp:self.disableSignUp];
     if (showSignUp) {
         [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"SIGN UP")
-                                             actionBlock:[self signUpActionBlockWithSuccess:success controller:controller]];
+                               actionBlock:^{
+                                [[UIApplication sharedApplication]
+                                  openURL:[NSURL URLWithString: @"https://www.arivale.com/learn-via-app"]];
+        }];
     }
     if (showResetPassword) {
         __weak A0FullLoginViewController *weakController = controller;
@@ -354,8 +357,11 @@
     BOOL showResetPassword = ![self.configuration shouldDisableResetPassword:self.disableResetPassword];
     BOOL showSignUp = ![self.configuration shouldDisableSignUp:self.disableSignUp];
     if (showSignUp) {
-        [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"SIGN UP")
-                                             actionBlock:[self signUpActionBlockWithSuccess:success controller:controller]];
+      [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"SIGN UP")
+                               actionBlock:^{
+                                 [[UIApplication sharedApplication]
+                                 openURL:[NSURL URLWithString: @"https://www.arivale.com/learn-via-app"]];
+      }];
     }
     if (showResetPassword) {
         __weak A0DatabaseLoginViewController *weakController = controller;
@@ -481,7 +487,7 @@
     return controller;
 }
 
-#pragma mark - Utility methods 
+#pragma mark - Utility methods
 
 - (A0AuthParameters *)copyAuthenticationParameters {
     A0AuthParameters *parameters = self.authenticationParameters ?: [A0AuthParameters newDefaultParams];
