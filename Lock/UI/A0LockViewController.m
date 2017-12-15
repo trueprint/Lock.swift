@@ -299,10 +299,10 @@
     BOOL showResetPassword = ![self.configuration shouldDisableResetPassword:self.disableResetPassword];
     BOOL showSignUp = ![self.configuration shouldDisableSignUp:self.disableSignUp];
     if (showSignUp) {
-        [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"SIGN UP")
+        [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"LEARN MORE")
                                actionBlock:^{
                                 [[UIApplication sharedApplication]
-                                  openURL:[NSURL URLWithString: @"https://www.arivale.com/learn-via-app"]];
+                                  openURL:[NSURL URLWithString: @"https://www.arivale.com/how-it-works"]];
         }];
     }
     if (showResetPassword) {
@@ -357,10 +357,10 @@
     BOOL showResetPassword = ![self.configuration shouldDisableResetPassword:self.disableResetPassword];
     BOOL showSignUp = ![self.configuration shouldDisableSignUp:self.disableSignUp];
     if (showSignUp) {
-      [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"SIGN UP")
+      [self.navigationView addButtonWithLocalizedTitle:A0LocalizedString(@"LEARN MORE")
                                actionBlock:^{
                                  [[UIApplication sharedApplication]
-                                  openURL:[NSURL URLWithString: @"https://www.arivale.com/learn-via-app"]];
+                                  openURL:[NSURL URLWithString: @"https://www.arivale.com/how-it-works"]];
       }];
     }
     if (showResetPassword) {
